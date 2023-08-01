@@ -10,9 +10,14 @@ const taskSchema = new mongoose.Schema({
         require: true
     },
     date:{
-        type: date,
-        default: date.now
-    }   
+        type: Date,
+        default: Date.now
+    },   
+    user:{
+        type : mongoose.Schema.Types.ObjectId,
+        ref :'User',
+        require: true
+    }
 },{
     timestamps:true
 })
