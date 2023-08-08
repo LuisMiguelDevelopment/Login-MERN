@@ -10,10 +10,10 @@ function RegisterPage() {
     const navigate = useNavigate();
 
     useEffect(()=>{
-      if(isAuthenticathed) navigate('/task');
+      if(isAuthenticathed) navigate('/tasks');
     },[isAuthenticathed , navigate] )
 
-    const onSubmit = handleSubmit(async(values)=>{
+    const onSubmited = handleSubmit(async(values)=>{
       sigup(values)
     })
   return (
@@ -27,7 +27,7 @@ function RegisterPage() {
       ))
     }
 
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onSubmited}>
             <input type="text" {...register("username",{required:true})} placeholder='UserName' className='w-full bg-zinc-600 text-white px-4 py-4 rounded-md my-2'/>
               {
                 errors.username && <p className='text-red-500'>UserName is required</p>
